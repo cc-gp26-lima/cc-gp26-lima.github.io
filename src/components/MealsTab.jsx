@@ -26,19 +26,22 @@ export default function MealsTab({ guide, meals, lang }) {
           </div>
         </div>
 
-        <ul className="mt-4 space-y-2 border-t border-canvas/12 pt-3.5 text-[13.5px]">
-          <li className="flex items-start gap-2.5">
-            <Icon name="clock" size={16} className="mt-0.5 shrink-0 text-amber" />
-            <span>{t(a.scope, lang)}</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <Icon name="fork" size={16} className="mt-0.5 shrink-0 text-amber" />
-            <span>{t(a.excludes, lang)}</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <Icon name="badge" size={16} className="mt-0.5 shrink-0 text-amber" />
-            <span>{t(a.overage, lang)}</span>
-          </li>
+        {/* The two limits people get wrong, stated as loudly as the number
+            itself — a guest who misses these is the one who gets a surprise bill. */}
+        <div className="mt-4 grid gap-2 border-t border-canvas/12 pt-4 sm:grid-cols-2">
+          <p className="flex items-center gap-2.5 rounded-lg bg-amber/15 px-3 py-2.5 text-[14px] font-bold text-amber">
+            <Icon name="fork" size={18} className="shrink-0" />
+            {t(ui.noAlcohol, lang)}
+          </p>
+          <p className="flex items-center gap-2.5 rounded-lg bg-canvas/10 px-3 py-2.5 text-[14px] font-semibold">
+            <Icon name="bed" size={18} className="shrink-0 text-canvas/70" />
+            {t(a.venue, lang)}
+          </p>
+        </div>
+
+        <ul className="mt-3 space-y-1.5 text-[13px] text-canvas/75">
+          <li>{t(a.excludes, lang)}</li>
+          <li>{t(a.overage, lang)}</li>
         </ul>
       </section>
 

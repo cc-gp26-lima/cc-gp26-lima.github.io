@@ -180,7 +180,7 @@ export function validate({ guide, schedule, meals }) {
   for (const m of a?.appliesTo ?? []) {
     if (!MEALS.includes(m)) problems.push(`allowance: unknown meal "${m}" in appliesTo`);
   }
-  for (const field of ['payer', 'headline', 'scope', 'body', 'excludes', 'overage']) {
+  for (const field of ['payer', 'headline', 'venue', 'body', 'excludes', 'overage']) {
     bilingual(a, 'allowance', field);
   }
   for (const rule of meals.rules) {

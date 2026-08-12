@@ -40,9 +40,12 @@ const sameAsDay = (s, day) => JSON.stringify(s.categories ?? null) === JSON.stri
 function Row({ session: s, guide, lang, status, done, open, onToggle, expandAll, categories }) {
   const ui = guide.ui;
   const place = venue(guide, s.venue);
-  const shown = open || expandAll;
+  // Headline moments state themselves in full — a guest should never have to
+  // discover that the gala has a dress code and a departure time.
+  const alwaysOpen = Boolean(s.highlight);
+  const shown = open || expandAll || alwaysOpen;
   const isEvent = s.kind !== 'logistics';
-  const hasDetail = Boolean(t(s.host, lang) || t(s.note, lang) || s.rsvp || place?.address);
+  const hasDetail = Boolean(t(s.host, lang) || t(s.note, lang) || s.rsvp?.email || place?.address);
 
   return (
     <li
@@ -62,7 +65,7 @@ function Row({ session: s, guide, lang, status, done, open, onToggle, expandAll,
         type="button"
         onClick={onToggle}
         aria-expanded={shown}
-        disabled={!hasDetail}
+        disabled={!hasDetail || alwaysOpen}
         className="flex w-full cursor-pointer items-start gap-3 px-3 py-2.5 text-left disabled:cursor-default"
       >
         <span
@@ -170,26 +173,25 @@ function Row({ session: s, guide, lang, status, done, open, onToggle, expandAll,
             </p>
           )}
           {t(s.dress, lang) && (
-            <p>
+            <p className="flex items-center gap-2">
               <span className="text-[10.5px] tracking-[0.12em] uppercase text-faint">
                 {t(ui.dress, lang)}
-              </span>{' '}
-              {t(s.dress, lang)}
+              </span>
+              <span className="rounded-full border border-accent/40 px-2 py-0.5 text-[12px] font-semibold text-accent">
+                {t(s.dress, lang)}
+              </span>
             </p>
           )}
           {t(s.host, lang) && <p className="font-display text-ink italic">{t(s.host, lang)}</p>}
           {t(s.note, lang) && <p className="max-w-[74ch]">{t(s.note, lang)}</p>}
-          {s.rsvp && (
+          {/* RSVP is email-only on a public page; a phone is tolerated but never assumed. */}
+          {s.rsvp?.email && (
             <p>
               <span className="text-[10.5px] tracking-[0.12em] uppercase text-faint">
                 {t(ui.rsvp, lang)}
               </span>{' '}
               <a href={`mailto:${s.rsvp.email}`} className="font-semibold hover:text-accent">
                 {s.rsvp.email}
-              </a>
-              <span className="text-faint"> · </span>
-              <a href={`tel:${s.rsvp.phone.replace(/\s/g, '')}`} className="font-semibold hover:text-accent">
-                {s.rsvp.phone}
               </a>
             </p>
           )}

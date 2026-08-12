@@ -10,8 +10,8 @@
       "es": "Guía del invitado"
     },
     "subtitle": {
-      "en": "Everything we normally tell you by phone — the competition programme, your hotel, how meals work and the practical answers.",
-      "es": "Todo lo que normalmente les contamos por teléfono: el programa de competencia, su hotel, cómo funcionan las comidas y las respuestas prácticas."
+      "en": "For the guests staying at the Country Club Lima Hotel — the competition programme, how meals work, and the practical answers.",
+      "es": "Para los invitados alojados en el Country Club Lima Hotel — el programa de competencia, cómo funcionan las comidas y las respuestas prácticas."
     },
     "verified": "2026-08-11",
     "verifiedLabel": {
@@ -114,8 +114,8 @@
       "es": ""
     },
     "stayWindow": {
-      "en": "Check-in is done. Departures are staggered: some guests check out before the competition ends, others stay through Wednesday 19 August.",
-      "es": "El check-in ya está hecho. Las salidas son escalonadas: algunos invitados hacen check-out antes de que termine la competencia y otros se quedan hasta el miércoles 19 de agosto."
+      "en": "Departures are staggered: some guests check out before the competition ends, others stay through Wednesday 19 August.",
+      "es": "Las salidas son escalonadas: algunos invitados hacen check-out antes de que termine la competencia y otros se quedan hasta el miércoles 19 de agosto."
     }
   },
   "contacts": [
@@ -183,8 +183,8 @@
         "es": "¿Qué está cubierto en las comidas?"
       },
       "answer": {
-        "en": "Up to the covered amount per lunch and the covered amount per dinner, every day until you check out — not only on competition days. Assumed by the Peruvian Judo Federation; alcohol is not included and anything above the ceiling is yours.",
-        "es": "Hasta the covered amount por almuerzo y the covered amount por cena, todos los días hasta su check-out — no solo en días de competencia. Asumido por la Federación Deportiva Peruana de Judo; el alcohol no está incluido y todo lo que exceda el tope es por cuenta de cada huésped."
+        "en": "Up to the covered amount per lunch and the covered amount per dinner, assumed by the Peruvian Judo Federation, valid at the Country Club Lima Hotel only. Alcohol is not included, and anything above the ceiling is yours.",
+        "es": "Hasta the covered amount por almuerzo y the covered amount por cena, asumidos por la Federación Deportiva Peruana de Judo, válidos únicamente en el Country Club Lima Hotel. El alcohol no está incluido y todo lo que exceda el tope es por cuenta de cada huésped."
       }
     },
     {
@@ -194,30 +194,8 @@
         "es": "Check-out"
       },
       "answer": {
-        "en": "12:00 on your own departure day. Departures are staggered: some guests leave before the competition ends, others stay through 19 August. The meal arrangement runs to your check-out day.",
-        "es": "12:00 el día de su salida. Las salidas son escalonadas: algunos parten antes de que termine la competencia y otros se quedan hasta el 19 de agosto. El esquema de comidas rige hasta el día de su check-out."
-      }
-    },
-    {
-      "id": "gala",
-      "ask": {
-        "en": "The gala dinner",
-        "es": "La cena de gala"
-      },
-      "answer": {
-        "en": "Thursday 13 August at Restaurant Huaca Pucllana, hosted by the Federation's President. Departure 19:00, dinner 19:30, dress smart casual. Please confirm your attendance by email to info@judoperu.org, or at the welcome desk.",
-        "es": "Jueves 13 de agosto en el Restaurant Huaca Pucllana, ofrecida por la Presidente de la Federación. Salida 19:00, cena 19:30, vestimenta casual elegante. Confirmen su asistencia por correo a info@judoperu.org, o en la mesa de bienvenida."
-      }
-    },
-    {
-      "id": "dress",
-      "ask": {
-        "en": "What do I wear?",
-        "es": "¿Cómo me visto?"
-      },
-      "answer": {
-        "en": "Smart casual for the gala dinner. At VIDENA dress for a sports arena and for Lima's August weather: grey, humid, 15–19 °C — a jacket for the evening final blocks.",
-        "es": "Casual elegante para la cena de gala. En la VIDENA, ropa cómoda de coliseo y pensada para el clima de agosto en Lima: gris, húmedo, 15–19 °C — abrigo para los bloques de finales de la tarde."
+        "en": "12:00 on your own departure day. Departures are staggered: some guests leave before the competition ends, others stay through 19 August.",
+        "es": "12:00 el día de su salida. Las salidas son escalonadas: algunos parten antes de que termine la competencia y otros se quedan hasta el 19 de agosto."
       }
     },
     {
@@ -451,6 +429,10 @@
     "finished": {
       "en": "Finished",
       "es": "Terminado"
+    },
+    "onlyAt": {
+      "en": "Where it is valid",
+      "es": "Dónde es válido"
     }
   }
 }

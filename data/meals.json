@@ -16,20 +16,20 @@
       "es": "the covered amount por persona, por servicio"
     },
     "body": {
-      "en": "The Federation covers up to the covered amount per lunch and up to the covered amount per dinner, as a maximum per service, on every day of your stay until you check out. It is a ceiling, not a credit: what you don't spend does not carry over to the next meal.",
-      "es": "La Federación asume hasta the covered amount por servicio de almuerzo y hasta the covered amount por servicio de cena, como tope máximo, todos los días de su estadía hasta su check-out. Es un tope, no un saldo: lo que no se consume no se acumula para la siguiente comida."
+      "en": "The Federation covers up to the covered amount per lunch and up to the covered amount per dinner, as a maximum per service. It is a ceiling, not a credit: what you don't spend does not carry over to the next meal.",
+      "es": "La Federación asume hasta the covered amount por servicio de almuerzo y hasta the covered amount por servicio de cena, como tope máximo. Es un tope, no un saldo: lo que no se consume no se acumula para la siguiente comida."
     },
     "excludes": {
-      "en": "Alcoholic drinks are not included in the the covered amount and are charged to you, whatever the total of the meal.",
-      "es": "Las bebidas alcohólicas no están incluidas en los the covered amount y se cargan al huésped, sea cual sea el total de la comida."
+      "en": "Alcoholic drinks are never included — they are charged to you, whatever the total of the meal.",
+      "es": "Las bebidas alcohólicas nunca están incluidas — se cargan al huésped, sea cual sea el total de la comida."
     },
     "overage": {
       "en": "Anything above the covered amount in a single service, and any extra consumption, is paid directly by the guest.",
       "es": "Todo lo que exceda los the covered amount en un mismo servicio, y cualquier consumo adicional o extra, lo asume directamente cada huésped."
     },
-    "scope": {
-      "en": "Every day of your stay, up to and including your check-out day.",
-      "es": "Todos los días de su estadía, hasta el día de su check-out inclusive."
+    "venue": {
+      "en": "Valid at the Country Club Lima Hotel only.",
+      "es": "Válido únicamente en el Country Club Lima Hotel."
     }
   },
   "rules": [
@@ -40,19 +40,19 @@
         "es": "the covered amount por almuerzo, the covered amount por cena"
       },
       "body": {
-        "en": "The Federation assumes up to the covered amount per service for lunch and the covered amount per service for dinner, as a maximum, for every day you are in the hotel until check-out. You order normally and sign; the amount up to that ceiling is charged to the Federation.",
-        "es": "La Federación asume un consumo de hasta the covered amount por servicio de almuerzo y the covered amount por servicio de cena, como tope máximo, por cada día que estén en el hotel hasta el check-out. Ustedes piden normalmente y firman; el monto hasta ese tope se carga a la Federación."
+        "en": "The Federation assumes up to the covered amount per service for lunch and the covered amount per service for dinner, as a maximum. You order normally and sign; the amount up to that ceiling is charged to the Federation.",
+        "es": "La Federación asume un consumo de hasta the covered amount por servicio de almuerzo y the covered amount por servicio de cena, como tope máximo. Ustedes piden normalmente y firman; el monto hasta ese tope se carga a la Federación."
       }
     },
     {
-      "id": "checkout",
+      "id": "where",
       "title": {
-        "en": "It ends at your check-out",
-        "es": "Termina en su check-out"
+        "en": "At the Country Club only",
+        "es": "Solo en el Country Club"
       },
       "body": {
-        "en": "The arrangement runs to the day you leave — guests departing earlier stop then, and guests staying to 19 August keep it until that day. Meals after check-out are your own.",
-        "es": "El esquema rige hasta el día en que se van — quienes salgan antes lo tienen hasta ese día, y quienes se queden hasta el 19 de agosto lo mantienen hasta esa fecha. Las comidas posteriores al check-out son por su cuenta."
+        "en": "The ceiling is valid at the Country Club Lima Hotel and nowhere else. Meals at VIDENA or at any restaurant outside the hotel are your own — the dining guide has a vetted list.",
+        "es": "El tope es válido en el Country Club Lima Hotel y en ningún otro lugar. Las comidas en la VIDENA o en cualquier restaurante fuera del hotel son por su cuenta — la guía de restaurantes tiene una lista verificada."
       }
     },
     {
@@ -97,17 +97,6 @@
       "body": {
         "en": "Thursday 13 August at Restaurant Huaca Pucllana is an invitation from the Federation's President and sits outside the the covered amount arrangement entirely. Departure 19:00, dinner 19:30, smart casual.",
         "es": "El jueves 13 de agosto en el Restaurant Huaca Pucllana es una invitación de la Presidente de la Federación y queda completamente fuera del esquema de the covered amount. Salida 19:00, cena 19:30, casual elegante."
-      }
-    },
-    {
-      "id": "where",
-      "title": {
-        "en": "Where the the covered amount is valid",
-        "es": "Dónde vale el tope de the covered amount"
-      },
-      "body": {
-        "en": "TODO — confirm whether the ceiling applies only at the Country Club Lima Hotel, or also at VIDENA and at restaurants outside. The welcome desk has the current answer.",
-        "es": "TODO — confirmar si el tope aplica solo en el Country Club Lima Hotel, o también en la VIDENA y en restaurantes fuera. La mesa de bienvenida tiene la respuesta vigente."
       }
     },
     {
