@@ -46,7 +46,9 @@ function usePrinting() {
 }
 
 export default function App() {
-  const [lang, setLang] = useState(() => localStorage.getItem('gp-guide-lang') || 'es');
+  // English first: the guests arrive from all over the tour. A guest who picks
+  // Spanish keeps it — the choice is remembered per device.
+  const [lang, setLang] = useState(() => localStorage.getItem('gp-guide-lang') || 'en');
   const [tab, setTab] = useState('programme');
   const now = useNow();
   const printing = usePrinting();
@@ -98,7 +100,7 @@ export default function App() {
             role="group"
             aria-label="Language"
           >
-            {['es', 'en'].map((l) => (
+            {['en', 'es'].map((l) => (
               <button
                 key={l}
                 type="button"
