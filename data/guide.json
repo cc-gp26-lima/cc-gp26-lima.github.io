@@ -1,0 +1,452 @@
+{
+  "$comment": "Editorial copy, taxonomy, venues, hotels and UI strings. Ids referenced from schedule.json and meals.json are checked by `npm run validate`. Every guest-facing string is { en, es }. PLACEHOLDER values are marked TODO — replace before sharing.",
+  "meta": {
+    "event": {
+      "en": "Lima Grand Prix 2026 · IJF World Judo Tour",
+      "es": "Lima Grand Prix 2026 · IJF World Judo Tour"
+    },
+    "title": {
+      "en": "Guest Guide",
+      "es": "Guía del invitado"
+    },
+    "subtitle": {
+      "en": "Everything we normally tell you by phone — the competition programme, your hotel, how meals work and the practical answers.",
+      "es": "Todo lo que normalmente les contamos por teléfono: el programa de competencia, su hotel, cómo funcionan las comidas y las respuestas prácticas."
+    },
+    "verified": "2026-08-11",
+    "verifiedLabel": {
+      "en": "Last updated",
+      "es": "Última actualización"
+    },
+    "dates": {
+      "from": "2026-08-11",
+      "to": "2026-08-19"
+    }
+  },
+  "venues": [
+    {
+      "id": "videna",
+      "name": {
+        "en": "Villa Deportiva Nacional — VIDENA",
+        "es": "Villa Deportiva Nacional — VIDENA"
+      },
+      "address": "San Luis, Lima",
+      "mapUrl": "https://maps.google.com/?q=Villa+Deportiva+Nacional+VIDENA+San+Luis+Lima",
+      "short": {
+        "en": "VIDENA",
+        "es": "VIDENA"
+      },
+      "note": {
+        "en": "TODO — entrance to use and where guests are seated.",
+        "es": "TODO — puerta de ingreso y ubicación de invitados."
+      }
+    },
+    {
+      "id": "el-pardo",
+      "name": {
+        "en": "El Pardo Lima — A DoubleTree by Hilton",
+        "es": "El Pardo Lima — A DoubleTree by Hilton"
+      },
+      "address": "Av. Jorge Chávez 130, Miraflores",
+      "mapUrl": "https://maps.google.com/?q=El+Pardo+DoubleTree+by+Hilton+Miraflores+Lima",
+      "short": {
+        "en": "El Pardo",
+        "es": "El Pardo"
+      },
+      "note": {
+        "en": "The official team hotel — accreditation, weigh-ins and judogi control happen here, not at your hotel.",
+        "es": "Es el hotel oficial de las delegaciones — la acreditación, los pesajes y el control de judogi son aquí, no en su hotel."
+      }
+    },
+    {
+      "id": "country-club-hotel",
+      "name": {
+        "en": "Country Club Lima Hotel",
+        "es": "Country Club Lima Hotel"
+      },
+      "address": "Los Eucaliptos 590, San Isidro",
+      "mapUrl": "https://maps.google.com/?q=Country+Club+Lima+Hotel",
+      "short": {
+        "en": "Your hotel",
+        "es": "Su hotel"
+      },
+      "note": {
+        "en": "",
+        "es": ""
+      }
+    },
+    {
+      "id": "huaca-pucllana",
+      "name": {
+        "en": "Restaurant Huaca Pucllana",
+        "es": "Restaurant Huaca Pucllana"
+      },
+      "address": "Calle Gral. Borgoño cdra. 8, Miraflores",
+      "mapUrl": "https://maps.google.com/?q=Restaurante+Huaca+Pucllana+Miraflores",
+      "short": {
+        "en": "Huaca Pucllana",
+        "es": "Huaca Pucllana"
+      },
+      "note": {
+        "en": "Inside the Huaca Pucllana site museum, beside the lit pyramid. Open-air terrace — a jacket is welcome after dark.",
+        "es": "Dentro del Museo de Sitio Huaca Pucllana, junto a la pirámide iluminada. Terraza al aire libre — se agradece un abrigo al caer la noche."
+      }
+    }
+  ],
+  "$hotelComment": "Every guest in this guide stays at the Country Club Lima Hotel — one hotel, so this is an object, not a list.",
+  "hotel": {
+    "id": "country-club-hotel",
+    "name": "Country Club Lima Hotel",
+    "address": "Los Eucaliptos 590, San Isidro, Lima",
+    "mapUrl": "https://maps.google.com/?q=Country+Club+Lima+Hotel",
+    "checkIn": "15:00",
+    "checkOut": "12:00",
+    "lateCheckOut": {
+      "en": "TODO — confirm late check-out on your own departure day. Check-out is 12:00; the bell desk keeps luggage afterwards.",
+      "es": "TODO — confirmar el late check-out el día de su salida. El check-out es a las 12:00; después el bell desk guarda el equipaje."
+    },
+    "incidentals": {
+      "en": "At check-in the hotel asks for a credit card as a guarantee against personal consumption — minibar, laundry, room service, alcohol and anything above the meal ceiling. If you prefer not to leave a card, the hotel charges each extra at the moment you order it, which is its normal process.",
+      "es": "En el check-in el hotel solicita una tarjeta de crédito en garantía para cubrir los consumos personales — minibar, lavandería, room service, alcohol y todo lo que exceda el tope de alimentación. Si prefieren no dejar una tarjeta, el hotel cobra cada extra al momento del consumo, que es su proceso regular."
+    },
+    "note": {
+      "en": "",
+      "es": ""
+    },
+    "stayWindow": {
+      "en": "Check-in is done. Departures are staggered: some guests check out before the competition ends, others stay through Wednesday 19 August.",
+      "es": "El check-in ya está hecho. Las salidas son escalonadas: algunos invitados hacen check-out antes de que termine la competencia y otros se quedan hasta el miércoles 19 de agosto."
+    }
+  },
+  "contacts": [
+    {
+      "id": "welcome-desk",
+      "role": {
+        "en": "Welcome desk, by the entrance",
+        "es": "Mesa de bienvenida, en la entrada"
+      },
+      "name": {
+        "en": "Aldo · Gerardo",
+        "es": "Aldo · Gerardo"
+      },
+      "note": {
+        "en": "Staffed through the event — the first place to ask about anything in this guide.",
+        "es": "Atendida durante todo el evento — el primer lugar para consultar cualquier cosa de esta guía."
+      }
+    },
+    {
+      "id": "federation",
+      "role": {
+        "en": "Peruvian Judo Federation",
+        "es": "Federación Deportiva Peruana de Judo"
+      },
+      "email": "info@judoperu.org",
+      "name": {
+        "en": "By email",
+        "es": "Por correo"
+      },
+      "note": {
+        "en": "For the gala dinner RSVP and anything the desk cannot resolve.",
+        "es": "Para confirmar la cena de gala y lo que la mesa no pueda resolver."
+      }
+    }
+  ],
+  "links": {
+    "dining": {
+      "url": "https://griverat.github.io/gp-dining/",
+      "title": {
+        "en": "Lima Dining Reference",
+        "es": "Guía de restaurantes de Lima"
+      },
+      "body": {
+        "en": "Where to eat on your own time: 40+ vetted restaurants across Miraflores, San Isidro, Barranco and San Borja, with hours, price bands, booking policy and a map.",
+        "es": "Dónde comer por su cuenta: más de 40 restaurantes verificados en Miraflores, San Isidro, Barranco y San Borja, con horarios, rangos de precio, política de reservas y mapa."
+      }
+    }
+  },
+  "essentials": [
+    {
+      "id": "desk",
+      "ask": {
+        "en": "Who do I ask?",
+        "es": "¿A quién le pregunto?"
+      },
+      "answer": {
+        "en": "There is a welcome desk by the entrance, staffed by Aldo and Gerardo. Anything about the programme, the meals or your stay — ask them first.",
+        "es": "Hay una mesa de bienvenida en la entrada, atendida por Aldo y Gerardo. Cualquier consulta sobre el programa, las comidas o su estadía — pregúntenles a ellos primero."
+      }
+    },
+    {
+      "id": "meal-allowance",
+      "ask": {
+        "en": "What is covered at meals?",
+        "es": "¿Qué está cubierto en las comidas?"
+      },
+      "answer": {
+        "en": "Up to the covered amount per lunch and the covered amount per dinner, every day until you check out — not only on competition days. Assumed by the Peruvian Judo Federation; alcohol is not included and anything above the ceiling is yours.",
+        "es": "Hasta the covered amount por almuerzo y the covered amount por cena, todos los días hasta su check-out — no solo en días de competencia. Asumido por la Federación Deportiva Peruana de Judo; el alcohol no está incluido y todo lo que exceda el tope es por cuenta de cada huésped."
+      }
+    },
+    {
+      "id": "checkout",
+      "ask": {
+        "en": "Check-out",
+        "es": "Check-out"
+      },
+      "answer": {
+        "en": "12:00 on your own departure day. Departures are staggered: some guests leave before the competition ends, others stay through 19 August. The meal arrangement runs to your check-out day.",
+        "es": "12:00 el día de su salida. Las salidas son escalonadas: algunos parten antes de que termine la competencia y otros se quedan hasta el 19 de agosto. El esquema de comidas rige hasta el día de su check-out."
+      }
+    },
+    {
+      "id": "gala",
+      "ask": {
+        "en": "The gala dinner",
+        "es": "La cena de gala"
+      },
+      "answer": {
+        "en": "Thursday 13 August at Restaurant Huaca Pucllana, hosted by the Federation's President. Departure 19:00, dinner 19:30, dress smart casual. Please confirm your attendance by email to info@judoperu.org, or at the welcome desk.",
+        "es": "Jueves 13 de agosto en el Restaurant Huaca Pucllana, ofrecida por la Presidente de la Federación. Salida 19:00, cena 19:30, vestimenta casual elegante. Confirmen su asistencia por correo a info@judoperu.org, o en la mesa de bienvenida."
+      }
+    },
+    {
+      "id": "dress",
+      "ask": {
+        "en": "What do I wear?",
+        "es": "¿Cómo me visto?"
+      },
+      "answer": {
+        "en": "Smart casual for the gala dinner. At VIDENA dress for a sports arena and for Lima's August weather: grey, humid, 15–19 °C — a jacket for the evening final blocks.",
+        "es": "Casual elegante para la cena de gala. En la VIDENA, ropa cómoda de coliseo y pensada para el clima de agosto en Lima: gris, húmedo, 15–19 °C — abrigo para los bloques de finales de la tarde."
+      }
+    },
+    {
+      "id": "credential",
+      "ask": {
+        "en": "My credential",
+        "es": "Mi credencial"
+      },
+      "answer": {
+        "en": "TODO — confirm how guest credentials are handed over. Team accreditation is at El Pardo Lima (DoubleTree), which is the team hotel, not yours.",
+        "es": "TODO — confirmar cómo se entregan las credenciales de invitados. La acreditación de delegaciones es en El Pardo Lima (DoubleTree), que es el hotel de las delegaciones, no el suyo."
+      }
+    },
+    {
+      "id": "hotel-services",
+      "ask": {
+        "en": "Wi-Fi, laundry, room service",
+        "es": "Wi-Fi, lavandería, room service"
+      },
+      "answer": {
+        "en": "All handled directly by the hotel — ask at reception. They are personal charges, not part of the Federation's arrangement.",
+        "es": "Todo lo maneja directamente el hotel — consulten en recepción. Son consumos personales, fuera del esquema de la Federación."
+      }
+    }
+  ],
+  "disclaimer": {
+    "heading": {
+      "en": "Working document",
+      "es": "Documento de trabajo"
+    },
+    "body": {
+      "en": "Times here follow the official Competition Programme as of the date above and can move — the preliminaries are still marked TBC by the organisation. The Peruvian Judo Federation is the final word on any question.",
+      "es": "Los horarios siguen el Programa de Competencia oficial a la fecha indicada y pueden cambiar — las eliminatorias siguen marcadas como por confirmar por la organización. La Federación Deportiva Peruana de Judo tiene la última palabra."
+    }
+  },
+  "ui": {
+    "tabs": {
+      "programme": {
+        "en": "Programme",
+        "es": "Programa"
+      },
+      "meals": {
+        "en": "Meals",
+        "es": "Comidas"
+      },
+      "dining": {
+        "en": "Eating out",
+        "es": "Comer fuera"
+      },
+      "essentials": {
+        "en": "Good to know",
+        "es": "Datos útiles"
+      }
+    },
+    "print": {
+      "en": "Print",
+      "es": "Imprimir"
+    },
+    "today": {
+      "en": "Today",
+      "es": "Hoy"
+    },
+    "allDay": {
+      "en": "All day",
+      "es": "Todo el día"
+    },
+    "checkIn": {
+      "en": "Check-in",
+      "es": "Check-in"
+    },
+    "checkOut": {
+      "en": "Check-out",
+      "es": "Check-out"
+    },
+    "earlyCheckIn": {
+      "en": "Arriving early",
+      "es": "Si llegan temprano"
+    },
+    "lateCheckOut": {
+      "en": "Leaving late",
+      "es": "Si salen tarde"
+    },
+    "included": {
+      "en": "Included",
+      "es": "Incluido"
+    },
+    "notIncluded": {
+      "en": "On your own",
+      "es": "Por su cuenta"
+    },
+    "upTo": {
+      "en": "Up to",
+      "es": "Hasta"
+    },
+    "coveredBy": {
+      "en": "Covered by",
+      "es": "Asumido por"
+    },
+    "noAlcohol": {
+      "en": "Alcohol not included",
+      "es": "No incluye alcohol"
+    },
+    "timeTbc": {
+      "en": "Hour to be confirmed",
+      "es": "Hora por confirmar"
+    },
+    "where": {
+      "en": "Where",
+      "es": "Dónde"
+    },
+    "when": {
+      "en": "When",
+      "es": "Cuándo"
+    },
+    "who": {
+      "en": "Who",
+      "es": "Quiénes"
+    },
+    "dress": {
+      "en": "Dress",
+      "es": "Vestimenta"
+    },
+    "openMap": {
+      "en": "Map",
+      "es": "Mapa"
+    },
+    "transport": {
+      "en": "Getting around",
+      "es": "Traslados"
+    },
+    "contacts": {
+      "en": "Who to call",
+      "es": "A quién llamar"
+    },
+    "nothingToday": {
+      "en": "Nothing scheduled for this day.",
+      "es": "Nada programado para este día."
+    },
+    "openGuide": {
+      "en": "Open the dining guide",
+      "es": "Abrir la guía de restaurantes"
+    },
+    "mealRules": {
+      "en": "How meals work",
+      "es": "Cómo funcionan las comidas"
+    },
+    "tbc": {
+      "en": "To be confirmed",
+      "es": "Por confirmar"
+    },
+    "competitionDay": {
+      "en": "Competition day",
+      "es": "Día de competencia"
+    },
+    "women": {
+      "en": "Women",
+      "es": "Mujeres"
+    },
+    "men": {
+      "en": "Men",
+      "es": "Hombres"
+    },
+    "teamOnly": {
+      "en": "Team",
+      "es": "Delegaciones"
+    },
+    "rsvp": {
+      "en": "RSVP",
+      "es": "Confirmar asistencia"
+    },
+    "departure": {
+      "en": "Departure",
+      "es": "Salida"
+    },
+    "hostedBy": {
+      "en": "Hosted by",
+      "es": "Ofrecida por"
+    },
+    "dayShort": {
+      "en": "D",
+      "es": "D"
+    },
+    "now": {
+      "en": "Now",
+      "es": "Ahora"
+    },
+    "nextUp": {
+      "en": "Next up",
+      "es": "Lo que sigue"
+    },
+    "thenAfter": {
+      "en": "Then",
+      "es": "Después"
+    },
+    "details": {
+      "en": "Details",
+      "es": "Detalles"
+    },
+    "eventOver": {
+      "en": "That's the whole programme — safe travels.",
+      "es": "Ese es todo el programa — buen viaje."
+    },
+    "yourDay": {
+      "en": "Your day",
+      "es": "Tu día"
+    },
+    "untilCheckout": {
+      "en": "Every day until your check-out",
+      "es": "Todos los días hasta su check-out"
+    },
+    "currentBlock": {
+      "en": "Now",
+      "es": "Ahora"
+    },
+    "upNext": {
+      "en": "Up next",
+      "es": "Sigue"
+    },
+    "yourStay": {
+      "en": "Your stay",
+      "es": "Su estadía"
+    },
+    "noEvents": {
+      "en": "No competition events — the the covered amount arrangement still applies.",
+      "es": "Sin eventos de competencia — el esquema de the covered amount sigue vigente."
+    },
+    "askDesk": {
+      "en": "Ask the welcome desk by the entrance",
+      "es": "Consulten en la mesa de bienvenida de la entrada"
+    }
+  }
+}

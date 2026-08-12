@@ -1,0 +1,23 @@
+{
+  "name": "gp-guest-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Guest guide for the Grand Prix Lima 2026 — competition programme, hotel check-in/out, meal arrangements and practical answers, from one JSON dataset.",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run validate && vite build",
+    "preview": "vite preview",
+    "validate": "node scripts/validate.mjs"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.0"
+  }
+}

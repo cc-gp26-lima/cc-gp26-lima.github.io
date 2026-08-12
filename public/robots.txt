@@ -1,0 +1,4 @@
+# This guide is shared by link with the guests staying at the hotel.
+# It is not secret, but it is not meant to be found by search.
+User-agent: *
+Disallow: /

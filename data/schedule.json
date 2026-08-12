@@ -1,0 +1,573 @@
+{
+  "$comment": "The official Competition Programme (Lima Grand Prix 2026, IJF World Judo Tour) plus the guest events around it. `venue` must match a venue id in guide.json. `kind` colours the row: competition | social | logistics. `audience` is 'all' or 'team' — team rows are accreditation, draw, weigh-ins and judogi control, which guests can hide. Preliminaries are TBC in the official programme: those carry `tbc: true` and an `approxStart` used only to order the day. All times 24h local (America/Lima).",
+  "days": [
+    {
+      "date": "2026-08-11",
+      "label": {
+        "en": "Tuesday — arrivals",
+        "es": "Martes — llegadas"
+      },
+      "sessions": [
+        {
+          "id": "arrivals",
+          "start": "15:00",
+          "kind": "logistics",
+          "audience": "all",
+          "icon": "bed",
+          "title": {
+            "en": "Arrival and check-in",
+            "es": "Llegada y check-in"
+          },
+          "venue": "country-club-hotel",
+          "action": {
+            "en": "Done — you are checked in",
+            "es": "Listo — ya hicieron check-in"
+          },
+          "note": {
+            "en": "Rooms are booked and paid under the event's reservation. The card left at the desk covers personal extras only.",
+            "es": "Las habitaciones están reservadas y pagadas bajo la reserva del evento. La tarjeta dejada en recepción cubre solo los consumos personales."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "label": {
+        "en": "Wednesday — arrivals and accreditation",
+        "es": "Miércoles — llegadas y acreditación"
+      },
+      "sessions": [
+        {
+          "id": "wed-accreditation",
+          "start": "14:00",
+          "end": "20:00",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Accreditation",
+            "es": "Acreditación"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "badge"
+        },
+        {
+          "id": "wed-judogi",
+          "start": "16:00",
+          "end": "18:30",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Judogi and backnumber pre-control",
+            "es": "Control previo de judogi y backnumber"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "clipboard"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "label": {
+        "en": "Thursday — draw and gala dinner",
+        "es": "Jueves — sorteo y cena de gala"
+      },
+      "sessions": [
+        {
+          "id": "thu-accreditation",
+          "start": "09:00",
+          "end": "12:00",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Accreditation",
+            "es": "Acreditación"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "badge"
+        },
+        {
+          "id": "thu-draw",
+          "start": "14:00",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Draw",
+            "es": "Sorteo"
+          },
+          "note": {
+            "en": "Held online.",
+            "es": "Se realiza en línea."
+          },
+          "icon": "clipboard"
+        },
+        {
+          "id": "thu-unofficial-weigh-in",
+          "start": "15:20",
+          "end": "15:50",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Unofficial weigh-in",
+            "es": "Pesaje no oficial"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "scale"
+        },
+        {
+          "id": "thu-weigh-in",
+          "start": "16:00",
+          "end": "16:30",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Weigh-in",
+            "es": "Pesaje oficial"
+          },
+          "venue": "el-pardo",
+          "categories": {
+            "w": [
+              "-48 kg",
+              "-52 kg",
+              "-57 kg"
+            ],
+            "m": [
+              "-60 kg",
+              "-66 kg"
+            ]
+          },
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "scale"
+        },
+        {
+          "id": "thu-judogi",
+          "start": "16:10",
+          "end": "17:40",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Judogi and backnumber pre-control",
+            "es": "Control previo de judogi y backnumber"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "clipboard"
+        },
+        {
+          "id": "gala-dinner",
+          "start": "19:30",
+          "kind": "social",
+          "audience": "all",
+          "highlight": true,
+          "title": {
+            "en": "Gala Dinner",
+            "es": "Cena de Gala"
+          },
+          "venue": "huaca-pucllana",
+          "dress": {
+            "en": "Smart casual",
+            "es": "Casual elegante"
+          },
+          "host": {
+            "en": "By invitation of the President of the Peruvian Judo Federation, Mrs. María Martínez Murciego.",
+            "es": "Por invitación de la Presidente de la Federación Deportiva Peruana de Judo, Sra. María Martínez Murciego."
+          },
+          "departure": "19:00",
+          "rsvp": {
+            "email": "info@judoperu.org"
+          },
+          "note": {
+            "en": "Departure for the restaurant at 19:00, dinner at 19:30. Please confirm your attendance in advance.",
+            "es": "Salida al restaurante 19:00, cena 19:30. Agradeceremos confirmar su asistencia con anticipación."
+          },
+          "icon": "star",
+          "action": {
+            "en": "Be in the lobby at 19:00",
+            "es": "Estar en el lobby a las 19:00"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "competitionDay": 1,
+      "categories": {
+        "w": [
+          "-48 kg",
+          "-52 kg",
+          "-57 kg"
+        ],
+        "m": [
+          "-60 kg",
+          "-66 kg"
+        ]
+      },
+      "sessions": [
+        {
+          "id": "fri-preliminaries",
+          "tbc": true,
+          "approxStart": "10:00",
+          "kind": "competition",
+          "audience": "all",
+          "title": {
+            "en": "Preliminaries",
+            "es": "Eliminatorias"
+          },
+          "venue": "videna",
+          "categories": {
+            "w": [
+              "-48 kg",
+              "-52 kg",
+              "-57 kg"
+            ],
+            "m": [
+              "-60 kg",
+              "-66 kg"
+            ]
+          },
+          "note": {
+            "en": "Start time to be confirmed by the organisation.",
+            "es": "Hora de inicio por confirmar por la organización."
+          },
+          "icon": "judo"
+        },
+        {
+          "id": "fri-unofficial-weigh-in",
+          "start": "15:20",
+          "end": "15:50",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Unofficial weigh-in",
+            "es": "Pesaje no oficial"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "scale"
+        },
+        {
+          "id": "fri-weigh-in",
+          "start": "16:00",
+          "end": "16:30",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Weigh-in",
+            "es": "Pesaje oficial"
+          },
+          "venue": "el-pardo",
+          "categories": {
+            "w": [
+              "-63 kg",
+              "-70 kg"
+            ],
+            "m": [
+              "-73 kg",
+              "-81 kg"
+            ]
+          },
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "scale"
+        },
+        {
+          "id": "fri-judogi",
+          "start": "16:10",
+          "end": "17:40",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Judogi and backnumber pre-control",
+            "es": "Control previo de judogi y backnumber"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "clipboard"
+        },
+        {
+          "id": "fri-final-block",
+          "start": "17:00",
+          "kind": "competition",
+          "audience": "all",
+          "highlight": true,
+          "title": {
+            "en": "Final Block",
+            "es": "Bloque de finales"
+          },
+          "venue": "videna",
+          "categories": {
+            "w": [
+              "-48 kg",
+              "-52 kg",
+              "-57 kg"
+            ],
+            "m": [
+              "-60 kg",
+              "-66 kg"
+            ]
+          },
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "trophy"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "competitionDay": 2,
+      "categories": {
+        "w": [
+          "-63 kg",
+          "-70 kg"
+        ],
+        "m": [
+          "-73 kg",
+          "-81 kg"
+        ]
+      },
+      "sessions": [
+        {
+          "id": "sat-preliminaries",
+          "tbc": true,
+          "approxStart": "10:00",
+          "kind": "competition",
+          "audience": "all",
+          "title": {
+            "en": "Preliminaries",
+            "es": "Eliminatorias"
+          },
+          "venue": "videna",
+          "categories": {
+            "w": [
+              "-63 kg",
+              "-70 kg"
+            ],
+            "m": [
+              "-73 kg",
+              "-81 kg"
+            ]
+          },
+          "note": {
+            "en": "Start time to be confirmed by the organisation.",
+            "es": "Hora de inicio por confirmar por la organización."
+          },
+          "icon": "judo"
+        },
+        {
+          "id": "sat-unofficial-weigh-in",
+          "start": "15:20",
+          "end": "15:50",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Unofficial weigh-in",
+            "es": "Pesaje no oficial"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "scale"
+        },
+        {
+          "id": "sat-weigh-in",
+          "start": "16:00",
+          "end": "16:30",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Weigh-in",
+            "es": "Pesaje oficial"
+          },
+          "venue": "el-pardo",
+          "categories": {
+            "w": [
+              "-78 kg",
+              "+78 kg"
+            ],
+            "m": [
+              "-90 kg",
+              "-100 kg",
+              "+100 kg"
+            ]
+          },
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "scale"
+        },
+        {
+          "id": "sat-judogi",
+          "start": "16:10",
+          "end": "17:40",
+          "kind": "logistics",
+          "audience": "team",
+          "title": {
+            "en": "Judogi and backnumber pre-control",
+            "es": "Control previo de judogi y backnumber"
+          },
+          "venue": "el-pardo",
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "clipboard"
+        },
+        {
+          "id": "sat-final-block",
+          "start": "17:00",
+          "kind": "competition",
+          "audience": "all",
+          "highlight": true,
+          "title": {
+            "en": "Final Block",
+            "es": "Bloque de finales"
+          },
+          "venue": "videna",
+          "categories": {
+            "w": [
+              "-63 kg",
+              "-70 kg"
+            ],
+            "m": [
+              "-73 kg",
+              "-81 kg"
+            ]
+          },
+          "note": {
+            "en": "",
+            "es": ""
+          },
+          "icon": "trophy"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "competitionDay": 3,
+      "categories": {
+        "w": [
+          "-78 kg",
+          "+78 kg"
+        ],
+        "m": [
+          "-90 kg",
+          "-100 kg",
+          "+100 kg"
+        ]
+      },
+      "sessions": [
+        {
+          "id": "sun-preliminaries",
+          "tbc": true,
+          "approxStart": "10:00",
+          "kind": "competition",
+          "audience": "all",
+          "title": {
+            "en": "Preliminaries",
+            "es": "Eliminatorias"
+          },
+          "venue": "videna",
+          "categories": {
+            "w": [
+              "-78 kg",
+              "+78 kg"
+            ],
+            "m": [
+              "-90 kg",
+              "-100 kg",
+              "+100 kg"
+            ]
+          },
+          "note": {
+            "en": "Start time to be confirmed by the organisation.",
+            "es": "Hora de inicio por confirmar por la organización."
+          },
+          "icon": "judo"
+        },
+        {
+          "id": "sun-final-block",
+          "start": "17:00",
+          "kind": "competition",
+          "audience": "all",
+          "highlight": true,
+          "title": {
+            "en": "Final Block",
+            "es": "Bloque de finales"
+          },
+          "venue": "videna",
+          "categories": {
+            "w": [
+              "-78 kg",
+              "+78 kg"
+            ],
+            "m": [
+              "-90 kg",
+              "-100 kg",
+              "+100 kg"
+            ]
+          },
+          "note": {
+            "en": "Last day of competition. Prize giving follows the final block.",
+            "es": "Último día de competencia. La premiación sigue al bloque de finales."
+          },
+          "icon": "trophy"
+        },
+        {
+          "id": "departures",
+          "tbc": true,
+          "approxStart": "22:00",
+          "kind": "logistics",
+          "audience": "all",
+          "title": {
+            "en": "Departures begin",
+            "es": "Empiezan las salidas"
+          },
+          "venue": "country-club-hotel",
+          "note": {
+            "en": "Departures are staggered — some guests leave from this day, others stay to 19 August. Check-out is 12:00 on your own departure day.",
+            "es": "Las salidas son escalonadas — algunos invitados parten desde este día y otros se quedan hasta el 19 de agosto. El check-out es a las 12:00 el día de su salida."
+          },
+          "icon": "plane",
+          "action": {
+            "en": "Check-out 12:00 on your day",
+            "es": "Check-out 12:00 el día que salgan"
+          }
+        }
+      ]
+    }
+  ]
+}
