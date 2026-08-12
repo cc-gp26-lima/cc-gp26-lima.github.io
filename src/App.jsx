@@ -9,7 +9,6 @@ import NextUp from './components/NextUp.jsx';
 import ProgrammeTab from './components/ProgrammeTab.jsx';
 import MealsTab from './components/MealsTab.jsx';
 import DiningTab from './components/DiningTab.jsx';
-import EssentialsTab from './components/EssentialsTab.jsx';
 
 import { t } from '../shared/format.js';
 import { defaultDate } from '../shared/data.js';
@@ -176,17 +175,30 @@ export default function App() {
           />
         ) : tab === 'meals' ? (
           <MealsTab guide={guide} meals={meals} lang={lang} />
-        ) : tab === 'dining' ? (
-          <DiningTab guide={guide} lang={lang} />
         ) : (
-          <EssentialsTab guide={guide} lang={lang} />
+          <DiningTab guide={guide} lang={lang} />
         )}
       </main>
 
-      <footer className="mt-10 space-y-1.5 border-t border-rule pt-4 text-[11.5px] text-faint">
-        <p className="font-semibold text-soft">
-          {t(guide.contacts[0].role, lang)} — {t(guide.contacts[0].name, lang)}
-        </p>
+      <footer className="mt-10 border-t border-rule pt-4 text-[11.5px] text-faint">
+        <div className="mb-3 rounded-xl border border-rule bg-surface px-4 py-3">
+          {guide.contacts.map((c) => (
+            <p key={c.id} className="text-[13px] text-soft not-first:mt-1.5">
+              <span className="font-semibold text-ink">{t(c.role, lang)}</span> —{' '}
+              {c.email ? (
+                <a
+                  href={`mailto:${c.email}`}
+                  className="font-semibold underline decoration-rule underline-offset-2 hover:text-accent"
+                >
+                  {c.email}
+                </a>
+              ) : (
+                <span className="font-semibold text-accent">{t(c.name, lang)}</span>
+              )}
+              <span className="text-faint"> · {t(c.note, lang)}</span>
+            </p>
+          ))}
+        </div>
         <p className="max-w-[80ch]">{t(guide.disclaimer.body, lang)}</p>
         <p>
           {t(guide.meta.verifiedLabel, lang)} {guide.meta.verified}

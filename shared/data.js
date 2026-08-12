@@ -127,10 +127,6 @@ export function validate({ guide, schedule, meals }) {
   if (!venues.has(guide.hotel.id)) problems.push(`hotel "${guide.hotel.id}": no matching venue`);
   checkTime(guide.hotel.checkIn, 'hotel', 'checkIn', { required: true });
   checkTime(guide.hotel.checkOut, 'hotel', 'checkOut', { required: true });
-  for (const item of guide.essentials) {
-    bilingual(item, `essentials "${item.id}"`, 'ask');
-    bilingual(item, `essentials "${item.id}"`, 'answer');
-  }
   for (const c of guide.contacts) {
     bilingual(c, `contact "${c.id}"`, 'role');
     bilingual(c, `contact "${c.id}"`, 'note');

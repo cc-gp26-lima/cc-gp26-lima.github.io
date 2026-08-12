@@ -1,5 +1,5 @@
 {
-  "$comment": "Editorial copy, taxonomy, venues, hotels and UI strings. Ids referenced from schedule.json and meals.json are checked by `npm run validate`. Every guest-facing string is { en, es }. PLACEHOLDER values are marked TODO — replace before sharing.",
+  "$comment": "Editorial copy, venues, the hotel, contacts and UI strings. Ids referenced from schedule.json are checked by `npm run validate`, which also rejects anything phone-shaped: this guide is published publicly. Every guest-facing string is { en, es }.",
   "meta": {
     "event": {
       "en": "Lima Grand Prix 2026 · IJF World Judo Tour",
@@ -37,8 +37,8 @@
         "es": "VIDENA"
       },
       "note": {
-        "en": "TODO — entrance to use and where guests are seated.",
-        "es": "TODO — puerta de ingreso y ubicación de invitados."
+        "en": "",
+        "es": ""
       }
     },
     {
@@ -101,10 +101,6 @@
     "mapUrl": "https://maps.google.com/?q=Country+Club+Lima+Hotel",
     "checkIn": "15:00",
     "checkOut": "12:00",
-    "lateCheckOut": {
-      "en": "TODO — confirm late check-out on your own departure day. Check-out is 12:00; the bell desk keeps luggage afterwards.",
-      "es": "TODO — confirmar el late check-out el día de su salida. El check-out es a las 12:00; después el bell desk guarda el equipaje."
-    },
     "incidentals": {
       "en": "At check-in the hotel asks for a credit card as a guarantee against personal consumption — minibar, laundry, room service, alcohol and anything above the meal ceiling. If you prefer not to leave a card, the hotel charges each extra at the moment you order it, which is its normal process.",
       "es": "En el check-in el hotel solicita una tarjeta de crédito en garantía para cubrir los consumos personales — minibar, lavandería, room service, alcohol y todo lo que exceda el tope de alimentación. Si prefieren no dejar una tarjeta, el hotel cobra cada extra al momento del consumo, que es su proceso regular."
@@ -164,63 +160,6 @@
       }
     }
   },
-  "essentials": [
-    {
-      "id": "desk",
-      "ask": {
-        "en": "Who do I ask?",
-        "es": "¿A quién le pregunto?"
-      },
-      "answer": {
-        "en": "There is a welcome desk by the entrance, staffed by Aldo and Gerardo. Anything about the programme, the meals or your stay — ask them first.",
-        "es": "Hay una mesa de bienvenida en la entrada, atendida por Aldo y Gerardo. Cualquier consulta sobre el programa, las comidas o su estadía — pregúntenles a ellos primero."
-      }
-    },
-    {
-      "id": "meal-allowance",
-      "ask": {
-        "en": "What is covered at meals?",
-        "es": "¿Qué está cubierto en las comidas?"
-      },
-      "answer": {
-        "en": "Up to the covered amount per lunch and the covered amount per dinner, assumed by the Peruvian Judo Federation, valid at the Country Club Lima Hotel only. Alcohol is not included, and anything above the ceiling is yours.",
-        "es": "Hasta the covered amount por almuerzo y the covered amount por cena, asumidos por la Federación Deportiva Peruana de Judo, válidos únicamente en el Country Club Lima Hotel. El alcohol no está incluido y todo lo que exceda el tope es por cuenta de cada huésped."
-      }
-    },
-    {
-      "id": "checkout",
-      "ask": {
-        "en": "Check-out",
-        "es": "Check-out"
-      },
-      "answer": {
-        "en": "12:00 on your own departure day. Departures are staggered: some guests leave before the competition ends, others stay through 19 August.",
-        "es": "12:00 el día de su salida. Las salidas son escalonadas: algunos parten antes de que termine la competencia y otros se quedan hasta el 19 de agosto."
-      }
-    },
-    {
-      "id": "credential",
-      "ask": {
-        "en": "My credential",
-        "es": "Mi credencial"
-      },
-      "answer": {
-        "en": "TODO — confirm how guest credentials are handed over. Team accreditation is at El Pardo Lima (DoubleTree), which is the team hotel, not yours.",
-        "es": "TODO — confirmar cómo se entregan las credenciales de invitados. La acreditación de delegaciones es en El Pardo Lima (DoubleTree), que es el hotel de las delegaciones, no el suyo."
-      }
-    },
-    {
-      "id": "hotel-services",
-      "ask": {
-        "en": "Wi-Fi, laundry, room service",
-        "es": "Wi-Fi, lavandería, room service"
-      },
-      "answer": {
-        "en": "All handled directly by the hotel — ask at reception. They are personal charges, not part of the Federation's arrangement.",
-        "es": "Todo lo maneja directamente el hotel — consulten en recepción. Son consumos personales, fuera del esquema de la Federación."
-      }
-    }
-  ],
   "disclaimer": {
     "heading": {
       "en": "Working document",
@@ -244,10 +183,6 @@
       "dining": {
         "en": "Eating out",
         "es": "Comer fuera"
-      },
-      "essentials": {
-        "en": "Good to know",
-        "es": "Datos útiles"
       }
     },
     "print": {
