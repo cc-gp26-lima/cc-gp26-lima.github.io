@@ -66,8 +66,8 @@
           },
           "venue": "el-pardo",
           "note": {
-            "en": "",
-            "es": ""
+            "en": "Open: all athletes.",
+            "es": "Abierto: todos los atletas."
           },
           "icon": "clipboard"
         }
@@ -119,8 +119,8 @@
           "kind": "logistics",
           "audience": "team",
           "title": {
-            "en": "Unofficial weigh-in",
-            "es": "Pesaje no oficial"
+            "en": "Unofficial weigh-in — day 1 athletes",
+            "es": "Pesaje no oficial — atletas del día 1"
           },
           "venue": "el-pardo",
           "note": {
@@ -169,8 +169,8 @@
           },
           "venue": "el-pardo",
           "note": {
-            "en": "",
-            "es": ""
+            "en": "Open: all athletes. Obligatory: day 1 athletes, if you have not already passed the control.",
+            "es": "Abierto: todos los atletas. Obligatorio: atletas del día 1, si aún no han pasado el control."
           },
           "icon": "clipboard"
         },
@@ -247,8 +247,8 @@
             ]
           },
           "note": {
-            "en": "Start time to be confirmed by the organisation.",
-            "es": "Hora de inicio por confirmar por la organización."
+            "en": "The start time will be confirmed once the final number of athletes is known.",
+            "es": "La hora de inicio se confirmará cuando se conozca el número final de atletas."
           },
           "icon": "judo"
         },
@@ -259,8 +259,8 @@
           "kind": "logistics",
           "audience": "team",
           "title": {
-            "en": "Unofficial weigh-in",
-            "es": "Pesaje no oficial"
+            "en": "Unofficial weigh-in — day 2 athletes",
+            "es": "Pesaje no oficial — atletas del día 2"
           },
           "venue": "el-pardo",
           "note": {
@@ -308,8 +308,8 @@
           },
           "venue": "el-pardo",
           "note": {
-            "en": "",
-            "es": ""
+            "en": "Open: all athletes. Obligatory: day 2 athletes, if you have not already passed the control.",
+            "es": "Abierto: todos los atletas. Obligatorio: atletas del día 2, si aún no han pasado el control."
           },
           "icon": "clipboard"
         },
@@ -379,8 +379,8 @@
             ]
           },
           "note": {
-            "en": "Start time to be confirmed by the organisation.",
-            "es": "Hora de inicio por confirmar por la organización."
+            "en": "The start time will be confirmed once the final number of athletes is known.",
+            "es": "La hora de inicio se confirmará cuando se conozca el número final de atletas."
           },
           "icon": "judo"
         },
@@ -391,8 +391,8 @@
           "kind": "logistics",
           "audience": "team",
           "title": {
-            "en": "Unofficial weigh-in",
-            "es": "Pesaje no oficial"
+            "en": "Unofficial weigh-in — day 3 athletes",
+            "es": "Pesaje no oficial — atletas del día 3"
           },
           "venue": "el-pardo",
           "note": {
@@ -441,8 +441,8 @@
           },
           "venue": "el-pardo",
           "note": {
-            "en": "",
-            "es": ""
+            "en": "Open: all athletes. Obligatory: day 3 athletes, if you have not already passed the control.",
+            "es": "Abierto: todos los atletas. Obligatorio: atletas del día 3, si aún no han pasado el control."
           },
           "icon": "clipboard"
         },
@@ -513,8 +513,8 @@
             ]
           },
           "note": {
-            "en": "Start time to be confirmed by the organisation.",
-            "es": "Hora de inicio por confirmar por la organización."
+            "en": "The start time will be confirmed once the final number of athletes is known.",
+            "es": "La hora de inicio se confirmará cuando se conozca el número final de atletas."
           },
           "icon": "judo"
         },
@@ -541,8 +541,8 @@
             ]
           },
           "note": {
-            "en": "Last day of competition. Prize giving follows the final block.",
-            "es": "Último día de competencia. La premiación sigue al bloque de finales."
+            "en": "Last day of competition.",
+            "es": "Último día de competencia."
           },
           "icon": "trophy"
         },
