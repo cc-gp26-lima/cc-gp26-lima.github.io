@@ -447,6 +447,10 @@
     "askDesk": {
       "en": "Ask the welcome desk by the entrance",
       "es": "Consulten en la mesa de bienvenida de la entrada"
+    },
+    "finished": {
+      "en": "Finished",
+      "es": "Terminado"
     }
   }
 }

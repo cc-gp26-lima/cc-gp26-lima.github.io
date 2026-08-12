@@ -61,10 +61,24 @@ export default function App() {
   }, [lang]);
 
   const ui = guide.ui;
+  // Bumped on every explicit request to jump to a day — a chip tap or the hero.
+  // Scroll-driven day changes leave it alone, so only real taps move the page.
+  const [jumpNonce, setJumpNonce] = useState(0);
+  const jumpToDay = (d) => {
+    setDate(d);
+    setJumpNonce((n) => n + 1);
+  };
   /** The hero is a shortcut into the programme: tapping it opens that day. */
   const openDay = (d) => {
-    setDate(d);
     setTab('programme');
+    jumpToDay(d);
+  };
+
+  // A new tab starts at its own beginning, rather than inheriting how far down
+  // the previous one was scrolled.
+  const showTab = (id) => {
+    setTab(id);
+    window.scrollTo({ top: 0 });
   };
 
   return (
@@ -121,7 +135,7 @@ export default function App() {
             type="button"
             role="tab"
             aria-selected={tab === id}
-            onClick={() => setTab(id)}
+            onClick={() => showTab(id)}
             className={`-mb-px shrink-0 cursor-pointer border-b-2 px-0.5 pb-2 font-display text-[15px] whitespace-nowrap transition-colors ${
               tab === id
                 ? 'border-accent font-semibold text-accent'
@@ -140,7 +154,7 @@ export default function App() {
           <DayStrip
             dates={dates}
             value={date}
-            onChange={setDate}
+            onChange={jumpToDay}
             lang={lang}
             ui={ui}
             schedule={schedule}
@@ -156,6 +170,7 @@ export default function App() {
             date={date}
             lang={lang}
             setDate={setDate}
+            jumpNonce={jumpNonce}
             now={now}
             expandAll={printing}
           />

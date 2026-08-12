@@ -45,6 +45,19 @@ export function sessionsOn(schedule, date) {
  * anyone when to be anywhere. Returns `{ now, next }`, each
  * `{ session, date, start, end }` or null.
  */
+export const IMPLIED_RUN_MS = 2 * 60 * 60 * 1000;
+
+/**
+ * Has this session finished? Without a stated end it is assumed to run two
+ * hours; a session whose hour is still TBC counts as over once its day is.
+ */
+export function isDone(session, date, when = new Date()) {
+  if (session.tbc || !session.start) return at(date, '23:59') < when;
+  const start = at(date, session.start);
+  const end = session.end ? at(date, session.end) : new Date(start.getTime() + IMPLIED_RUN_MS);
+  return end < when;
+}
+
 export function agenda(schedule, when = new Date()) {
   const timed = schedule.days
     .flatMap((day) =>
@@ -61,11 +74,18 @@ export function agenda(schedule, when = new Date()) {
 
   // Without a stated end, something stays "on" for two hours — long enough for
   // a final block or a dinner, short enough not to shadow what comes next.
-  const impliedEnd = (e) => e.end ?? new Date(e.start.getTime() + 2 * 60 * 60 * 1000);
+  const impliedEnd = (e) => e.end ?? new Date(e.start.getTime() + IMPLIED_RUN_MS);
 
   const now = timed.find((e) => when >= e.start && when <= impliedEnd(e)) ?? null;
-  const next = timed.find((e) => e.start > when) ?? null;
-  return { now, next };
+  const nextIndex = timed.findIndex((e) => e.start > when);
+  const next = nextIndex === -1 ? null : timed[nextIndex];
+  const after = nextIndex === -1 ? null : (timed[nextIndex + 1] ?? null);
+
+  // The last thing that finished, so the card can show where the day has got to.
+  const done = timed.filter((e) => impliedEnd(e) < when);
+  const previous = done.length ? done[done.length - 1] : null;
+
+  return { previous, now, next, after };
 }
 
 /** The whole day record — label, competition day number, weight categories. */

@@ -3,13 +3,50 @@ import { agenda, venue } from '../../shared/data.js';
 import Icon from './Icon.jsx';
 
 /**
- * The answer to "what do I do now?", before any tab is chosen. Dark card, one
- * big time, one place, one instruction — everything else on the page is
- * reference material a guest consults; this is the part they act on.
+ * A small line above or below the headline: what just finished, and what comes
+ * after. Together the three tiers say where the day has got to, which is what a
+ * guest is really asking when they open the page.
+ */
+function Aside({ entry, guide, lang, label, tone, onOpen }) {
+  const place = venue(guide, entry.session.venue);
+
+  return (
+    <button
+      type="button"
+      onClick={() => onOpen(entry.date)}
+      className="flex w-full cursor-pointer items-baseline gap-2.5 px-5 py-2 text-left text-[12.5px]"
+    >
+      <span
+        className={`shrink-0 text-[9.5px] font-bold tracking-[0.14em] uppercase ${
+          tone === 'done' ? 'text-canvas/40' : 'text-canvas/55'
+        }`}
+      >
+        {label}
+      </span>
+      <span
+        className={`font-semibold tabular-nums ${tone === 'done' ? 'text-canvas/45' : 'text-canvas/80'}`}
+      >
+        {fmtTime(entry.session.start, lang)}
+      </span>
+      <span className={`truncate ${tone === 'done' ? 'text-canvas/45' : 'text-canvas/80'}`}>
+        {t(entry.session.title, lang)}
+      </span>
+      {place && (
+        <span className="ml-auto hidden shrink-0 text-canvas/40 sm:block">
+          {t(place.short, lang) || t(place.name, lang)}
+        </span>
+      )}
+    </button>
+  );
+}
+
+/**
+ * The answer to "where are we?", before any tab is chosen: what just finished,
+ * what is on now (or next), and what follows it.
  */
 export default function NextUp({ guide, schedule, lang, now, onOpen }) {
   const ui = guide.ui;
-  const { now: current, next } = agenda(schedule, now);
+  const { previous, now: current, next, after } = agenda(schedule, now);
   const lead = current ?? next;
 
   if (!lead) {
@@ -22,13 +59,26 @@ export default function NextUp({ guide, schedule, lang, now, onOpen }) {
 
   const live = lead === current;
   const place = venue(guide, lead.session.venue);
-  const after = live ? next : null;
+  const following = live ? next : after;
 
   return (
     <section
       className="ink-card mt-5 overflow-hidden rounded-xl bg-ink text-canvas"
       aria-label={t(live ? ui.now : ui.nextUp, lang)}
     >
+      {previous && (
+        <div className="border-b border-canvas/10">
+          <Aside
+            entry={previous}
+            guide={guide}
+            lang={lang}
+            label={t(ui.finished, lang)}
+            tone="done"
+            onOpen={onOpen}
+          />
+        </div>
+      )}
+
       <button
         type="button"
         onClick={() => onOpen(lead.date)}
@@ -70,24 +120,25 @@ export default function NextUp({ guide, schedule, lang, now, onOpen }) {
             )}
           </div>
         </div>
+
+        {t(lead.session.action, lang) && (
+          <p className="mt-3 flex items-center gap-2 text-[13.5px] font-semibold text-amber">
+            <Icon name="clock" size={16} />
+            {t(lead.session.action, lang)}
+          </p>
+        )}
       </button>
 
-      {(t(lead.session.action, lang) || after) && (
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-t border-canvas/12 px-5 py-2.5">
-          {t(lead.session.action, lang) ? (
-            <p className="flex items-center gap-2 text-[13.5px] font-semibold text-amber">
-              <Icon name="clock" size={16} />
-              {t(lead.session.action, lang)}
-            </p>
-          ) : (
-            <span />
-          )}
-          {after && (
-            <p className="text-[12.5px] text-canvas/55">
-              {t(ui.thenAfter, lang)} · {fmtTime(after.session.start, lang)}{' '}
-              {t(after.session.title, lang)}
-            </p>
-          )}
+      {following && (
+        <div className="border-t border-canvas/10">
+          <Aside
+            entry={following}
+            guide={guide}
+            lang={lang}
+            label={t(ui.thenAfter, lang)}
+            tone="upcoming"
+            onOpen={onOpen}
+          />
         </div>
       )}
     </section>

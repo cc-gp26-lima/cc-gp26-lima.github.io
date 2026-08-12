@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { t, fmtTime, fmtDayLong, at } from '../../shared/format.js';
-import { sessionsOn, dayOn, venue, agenda } from '../../shared/data.js';
+import { t, fmtTime, fmtDayLong } from '../../shared/format.js';
+import { sessionsOn, dayOn, venue, agenda, isDone } from '../../shared/data.js';
 import Icon from './Icon.jsx';
 
 /** Weight categories as chips — the index a judo programme is really read by. */
@@ -37,7 +37,7 @@ function Categories({ categories, ui, lang, tone = 'bg-surface text-ink border b
  *  it differs — a weigh-in, which is always for the next day's categories. */
 const sameAsDay = (s, day) => JSON.stringify(s.categories ?? null) === JSON.stringify(day?.categories ?? null);
 
-function Row({ session: s, guide, lang, status, open, onToggle, expandAll, categories }) {
+function Row({ session: s, guide, lang, status, done, open, onToggle, expandAll, categories }) {
   const ui = guide.ui;
   const place = venue(guide, s.venue);
   const shown = open || expandAll;
@@ -46,14 +46,16 @@ function Row({ session: s, guide, lang, status, open, onToggle, expandAll, categ
 
   return (
     <li
-      className={`border-l-[3px] ${
+      className={`border-l-[3px] ${done ? 'opacity-45' : ''} ${
         status === 'now'
           ? 'border-l-accent bg-accent-soft'
-          : status === 'next'
-            ? 'border-l-accent/40 bg-surface'
-            : isEvent
-              ? 'border-l-competition/25 bg-surface'
-              : 'border-l-transparent bg-transparent'
+          : s.highlight
+            ? 'border-l-accent bg-accent-soft/60'
+            : status === 'next'
+              ? 'border-l-accent/40 bg-surface'
+              : isEvent
+                ? 'border-l-competition/25 bg-surface'
+                : 'border-l-transparent bg-transparent'
       }`}
     >
       <button
@@ -78,22 +80,38 @@ function Row({ session: s, guide, lang, status, open, onToggle, expandAll, categ
           )}
         </span>
 
-        <Icon
-          name={s.icon}
-          kind={s.kind}
-          size={17}
-          className={`mt-0.5 shrink-0 ${isEvent ? 'text-competition' : 'text-faint'}`}
-        />
+        {/* A headline event carries a filled mark; everything else a plain glyph. */}
+        {s.highlight ? (
+          <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-accent text-white">
+            <Icon name={s.icon} kind={s.kind} size={16} />
+          </span>
+        ) : (
+          <Icon
+            name={s.icon}
+            kind={s.kind}
+            size={17}
+            className={`mt-0.5 shrink-0 ${isEvent ? 'text-competition' : 'text-faint'}`}
+          />
+        )}
 
         <span className="min-w-0 flex-1">
           <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <span
               className={`font-display leading-tight font-semibold ${
-                isEvent ? 'text-[17px] text-ink' : 'text-[14.5px] text-soft'
+                s.highlight
+                  ? 'text-[20px] text-ink'
+                  : isEvent
+                    ? 'text-[17px] text-ink'
+                    : 'text-[14.5px] text-soft'
               }`}
             >
               {t(s.title, lang)}
             </span>
+            {done && !status && (
+              <span className="rounded-full bg-raised px-2 py-0.5 text-[9.5px] font-bold tracking-[0.14em] uppercase text-faint">
+                {t(ui.finished, lang)}
+              </span>
+            )}
             {status && (
               <span
                 className={`rounded-full px-2 py-0.5 text-[9.5px] font-bold tracking-[0.14em] uppercase ${
@@ -187,22 +205,24 @@ function Row({ session: s, guide, lang, status, open, onToggle, expandAll, categ
  * next blocks called out. The day chips jump between sections rather than
  * filtering, so a guest never loses sight of what comes after today.
  */
-export default function ProgrammeTab({ guide, schedule, date, setDate, lang, now, expandAll }) {
+export default function ProgrammeTab({ guide, schedule, date, setDate, jumpNonce, lang, now, expandAll }) {
   const [openId, setOpenId] = useState(null);
   const ui = guide.ui;
   const sections = useRef({});
   const { now: current, next } = agenda(schedule, now);
 
-  // Following a day chip scrolls its section into view; the first render is
-  // left alone so the page doesn't jump before a guest has asked for anything.
-  const mounted = useRef(false);
+  /**
+   * Only a tap on a day chip scrolls the page. `jumpNonce` changes on each tap,
+   * including a repeat tap on the same day; watching the date instead would
+   * make the observer's own updates scroll the page, and ordinary scrolling
+   * would snap from day to day.
+   */
+  const settling = useRef(0);
   useEffect(() => {
-    if (!mounted.current) {
-      mounted.current = true;
-      return;
-    }
+    if (!jumpNonce) return;
+    settling.current = Date.now() + 700; // ignore observer noise while it glides
     sections.current[date]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [date]);
+  }, [jumpNonce]);
 
   /**
    * Scrolling is the other way to change days, so the chips follow the page:
@@ -213,6 +233,7 @@ export default function ProgrammeTab({ guide, schedule, date, setDate, lang, now
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        if (Date.now() < settling.current) return;
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
@@ -232,7 +253,7 @@ export default function ProgrammeTab({ guide, schedule, date, setDate, lang, now
       <div className="space-y-6">
         {schedule.days.map((day) => {
           const sessions = sessionsOn(schedule, day.date);
-          const past = at(day.date, '23:59') < now;
+
           const dayRecord = dayOn(schedule, day.date);
 
           return (
@@ -240,10 +261,24 @@ export default function ProgrammeTab({ guide, schedule, date, setDate, lang, now
               key={day.date}
               ref={(el) => (sections.current[day.date] = el)}
               data-date={day.date}
-              className={`scroll-mt-[104px] ${past ? 'opacity-55' : ''}`}
+              className={`scroll-mt-[104px] ${
+                dayRecord?.competitionDay
+                  ? 'rounded-xl border border-accent/30 bg-accent-soft/40 px-3 pt-3 pb-1 shadow-[0_1px_0_rgba(200,16,46,0.08)]'
+                  : ''
+              }`}
             >
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b-2 border-ink pb-1.5">
-                <h2 className="font-display text-[19px] font-semibold">{fmtDayLong(day.date, lang)}</h2>
+              <div
+                className={`flex flex-wrap items-baseline gap-x-3 gap-y-1 pb-1.5 ${
+                  dayRecord?.competitionDay ? 'border-b-2 border-accent/40' : 'border-b-2 border-ink'
+                }`}
+              >
+                <h2
+                  className={`font-display font-semibold ${
+                    dayRecord?.competitionDay ? 'text-[21px] text-accent' : 'text-[19px]'
+                  }`}
+                >
+                  {fmtDayLong(day.date, lang)}
+                </h2>
                 {dayRecord?.competitionDay && (
                   <span className="rounded-full bg-accent px-2.5 py-0.5 text-[10px] font-bold tracking-[0.12em] text-white uppercase">
                     {t(ui.competitionDay, lang)} {dayRecord.competitionDay}
@@ -271,6 +306,7 @@ export default function ProgrammeTab({ guide, schedule, date, setDate, lang, now
                     guide={guide}
                     lang={lang}
                     status={statusOf(s)}
+                    done={isDone(s, day.date, now)}
                     categories={sameAsDay(s, dayRecord) ? null : s.categories}
                     open={openId === s.id}
                     onToggle={() => setOpenId((v) => (v === s.id ? null : s.id))}
