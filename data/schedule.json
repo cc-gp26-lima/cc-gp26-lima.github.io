@@ -226,8 +226,6 @@
       "sessions": [
         {
           "id": "fri-preliminaries",
-          "tbc": true,
-          "approxStart": "10:00",
           "kind": "competition",
           "audience": "all",
           "title": {
@@ -247,10 +245,11 @@
             ]
           },
           "note": {
-            "en": "The start time will be confirmed once the final number of athletes is known.",
-            "es": "La hora de inicio se confirmará cuando se conozca el número final de atletas."
+            "en": "",
+            "es": ""
           },
-          "icon": "judo"
+          "icon": "judo",
+          "start": "11:00"
         },
         {
           "id": "fri-unofficial-weigh-in",
@@ -359,8 +358,6 @@
       "sessions": [
         {
           "id": "sat-preliminaries",
-          "tbc": true,
-          "approxStart": "10:00",
           "kind": "competition",
           "audience": "all",
           "title": {
@@ -379,10 +376,11 @@
             ]
           },
           "note": {
-            "en": "The start time will be confirmed once the final number of athletes is known.",
-            "es": "La hora de inicio se confirmará cuando se conozca el número final de atletas."
+            "en": "",
+            "es": ""
           },
-          "icon": "judo"
+          "icon": "judo",
+          "start": "11:30"
         },
         {
           "id": "sat-unofficial-weigh-in",
@@ -492,8 +490,6 @@
       "sessions": [
         {
           "id": "sun-preliminaries",
-          "tbc": true,
-          "approxStart": "10:00",
           "kind": "competition",
           "audience": "all",
           "title": {
@@ -513,10 +509,11 @@
             ]
           },
           "note": {
-            "en": "The start time will be confirmed once the final number of athletes is known.",
-            "es": "La hora de inicio se confirmará cuando se conozca el número final de atletas."
+            "en": "",
+            "es": ""
           },
-          "icon": "judo"
+          "icon": "judo",
+          "start": "12:00"
         },
         {
           "id": "sun-final-block",
