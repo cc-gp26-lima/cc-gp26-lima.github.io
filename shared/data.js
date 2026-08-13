@@ -76,7 +76,15 @@ export function agenda(schedule, when = new Date()) {
   // a final block or a dinner, short enough not to shadow what comes next.
   const impliedEnd = (e) => e.end ?? new Date(e.start.getTime() + IMPLIED_RUN_MS);
 
-  const now = timed.find((e) => when >= e.start && when <= impliedEnd(e)) ?? null;
+  /**
+   * Several things can be running at once — Friday's judogi control (16:10) is
+   * still open when the final block starts at 17:00 — so "now" is the one that
+   * matters most: a headline moment first, then any event over paperwork, then
+   * whichever started most recently.
+   */
+  const weight = (e) => (e.session.highlight ? 2 : 0) + (e.session.kind === 'logistics' ? 0 : 1);
+  const running = timed.filter((e) => when >= e.start && when <= impliedEnd(e));
+  const now = running.sort((a, b) => weight(b) - weight(a) || b.start - a.start)[0] ?? null;
   const nextIndex = timed.findIndex((e) => e.start > when);
   const next = nextIndex === -1 ? null : timed[nextIndex];
   const after = nextIndex === -1 ? null : (timed[nextIndex + 1] ?? null);
