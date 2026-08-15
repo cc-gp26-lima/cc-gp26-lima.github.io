@@ -180,10 +180,6 @@ export function validate({ guide, schedule, meals }) {
   // The arrangement is stated once, not per service: what the guide promises is
   // a ceiling per lunch and per dinner, valid until each guest checks out.
   const a = meals.allowance;
-  if (!(a?.perService > 0)) problems.push('allowance: perService must be a positive amount');
-  for (const m of a?.appliesTo ?? []) {
-    if (!MEALS.includes(m)) problems.push(`allowance: unknown meal "${m}" in appliesTo`);
-  }
   for (const field of ['payer', 'headline', 'venue', 'body', 'excludes', 'overage']) {
     bilingual(a, 'allowance', field);
   }
@@ -192,11 +188,14 @@ export function validate({ guide, schedule, meals }) {
     bilingual(rule, `rule "${rule.id}"`, 'body');
   }
 
-  // --- no phone numbers: this guide is published publicly ---
+  // --- published by link, so two things must never be written down here ---
   const phone = /(\+\s?\d[\d\s().-]{7,})/;
+  // The Federation's ceiling per service is theirs to quote, not ours to publish.
+  const money = /(S\/\s?\d|\d+(\.\d+)?\s?(soles|PEN)\b)/i;
   const scan = (node, path) => {
     if (typeof node === 'string') {
       if (phone.test(node)) problems.push(`${path}: looks like a phone number — this guide is public`);
+      if (money.test(node)) problems.push(`${path}: names an amount — the meal ceiling is not published`);
     } else if (node && typeof node === 'object') {
       for (const [k, v] of Object.entries(node)) scan(v, path ? `${path}.${k}` : k);
     }

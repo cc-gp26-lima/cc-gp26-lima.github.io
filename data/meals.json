@@ -1,31 +1,25 @@
 {
-  "$comment": "Meal arrangements. `coverage` is the whole model: 'included' = fully covered (breakfast in the room rate), 'capped' = covered by the Federation up to allowance.perService, 'own' = the guest pays. `venue` must match a venue id in guide.json and `date` must fall inside meta.dates.",
+  "$comment": "How meals work. The Federation's ceiling per service is deliberately not written down here — the guide is published by link and the figure is not ours to broadcast. Guests who need the amount ask the welcome desk.",
   "allowance": {
-    "perService": 0,
-    "currency": "PEN",
-    "appliesTo": [
-      "lunch",
-      "dinner"
-    ],
     "payer": {
       "en": "Peruvian Judo Federation",
       "es": "Federación Deportiva Peruana de Judo"
     },
     "headline": {
-      "en": "the covered amount per person, per service",
-      "es": "the covered amount por persona, por servicio"
+      "en": "Lunch and dinner are covered",
+      "es": "El almuerzo y la cena están cubiertos"
     },
     "body": {
-      "en": "The Federation covers up to the covered amount per lunch and up to the covered amount per dinner, as a maximum per service. It is a ceiling, not a credit: what you don't spend does not carry over to the next meal.",
-      "es": "La Federación asume hasta the covered amount por servicio de almuerzo y hasta the covered amount por servicio de cena, como tope máximo. Es un tope, no un saldo: lo que no se consume no se acumula para la siguiente comida."
+      "en": "The Federation covers lunch and dinner up to a set limit per service. It is a ceiling, not a credit: what you don't spend does not carry over to the next meal. The welcome desk can confirm the amount.",
+      "es": "La Federación cubre el almuerzo y la cena hasta un límite fijo por servicio. Es un tope, no un saldo: lo que no se consume no se acumula para la siguiente comida. La mesa de bienvenida puede confirmar el monto."
     },
     "excludes": {
       "en": "Alcoholic drinks are never included — they are charged to you, whatever the total of the meal.",
       "es": "Las bebidas alcohólicas nunca están incluidas — se cargan al huésped, sea cual sea el total de la comida."
     },
     "overage": {
-      "en": "Anything above the covered amount in a single service, and any extra consumption, is paid directly by the guest.",
-      "es": "Todo lo que exceda los the covered amount en un mismo servicio, y cualquier consumo adicional o extra, lo asume directamente cada huésped."
+      "en": "Anything above the limit in a single service, and any extra consumption, is paid directly by the guest.",
+      "es": "Todo lo que exceda el límite en un mismo servicio, y cualquier consumo adicional o extra, lo asume directamente cada huésped."
     },
     "venue": {
       "en": "Valid at the Country Club Lima Hotel only.",
@@ -36,12 +30,12 @@
     {
       "id": "allowance",
       "title": {
-        "en": "the covered amount per lunch, the covered amount per dinner",
-        "es": "the covered amount por almuerzo, the covered amount por cena"
+        "en": "Lunch and dinner are covered",
+        "es": "El almuerzo y la cena están cubiertos"
       },
       "body": {
-        "en": "The Federation assumes up to the covered amount per service for lunch and the covered amount per service for dinner, as a maximum. You order normally and sign; the amount up to that ceiling is charged to the Federation.",
-        "es": "La Federación asume un consumo de hasta the covered amount por servicio de almuerzo y the covered amount por servicio de cena, como tope máximo. Ustedes piden normalmente y firman; el monto hasta ese tope se carga a la Federación."
+        "en": "The Federation assumes lunch and dinner up to a maximum per service. You order normally and sign; the amount up to that ceiling is charged to the Federation. Ask the welcome desk if you want the figure.",
+        "es": "La Federación asume el almuerzo y la cena hasta un máximo por servicio. Ustedes piden normalmente y firman; el monto hasta ese tope se carga a la Federación. Pregunten en la mesa de bienvenida si desean saber la cifra."
       }
     },
     {
@@ -62,8 +56,8 @@
         "es": "El alcohol nunca está incluido"
       },
       "body": {
-        "en": "The the covered amount does not cover alcoholic drinks. They go on your personal bill even when the food is well under the ceiling.",
-        "es": "Los the covered amount no cubren bebidas alcohólicas. Van a su cuenta personal incluso si la comida quedó muy por debajo del tope."
+        "en": "The ceiling does not cover alcoholic drinks. They go on your personal bill even when the food is well under it.",
+        "es": "El tope no cubre bebidas alcohólicas. Van a su cuenta personal incluso si la comida quedó muy por debajo."
       }
     },
     {
@@ -84,8 +78,8 @@
         "es": "El desayuno es aparte"
       },
       "body": {
-        "en": "Breakfast is included in the room rate and does not touch the the covered amount lunch or dinner ceiling. Give your room number.",
-        "es": "El desayuno está incluido en la tarifa de la habitación y no consume el tope de the covered amount del almuerzo ni de la cena. Indiquen su número de habitación."
+        "en": "Breakfast is included in the room rate and does not touch the lunch or dinner ceiling. Give your room number.",
+        "es": "El desayuno está incluido en la tarifa de la habitación y no consume el tope del almuerzo ni de la cena. Indiquen su número de habitación."
       }
     },
     {
@@ -95,8 +89,8 @@
         "es": "La cena de gala es ofrecida"
       },
       "body": {
-        "en": "Thursday 13 August at Restaurant Huaca Pucllana is an invitation from the Federation's President and sits outside the the covered amount arrangement entirely. Departure 19:00, dinner 19:30, smart casual.",
-        "es": "El jueves 13 de agosto en el Restaurant Huaca Pucllana es una invitación de la Presidente de la Federación y queda completamente fuera del esquema de the covered amount. Salida 19:00, cena 19:30, casual elegante."
+        "en": "Thursday 13 August at Restaurant Huaca Pucllana is an invitation from the Federation's President and sits outside the meal arrangement entirely. Departure 19:00, dinner 19:30, smart casual.",
+        "es": "El jueves 13 de agosto en el Restaurant Huaca Pucllana es una invitación de la Presidente de la Federación y queda completamente fuera del esquema de comidas. Salida 19:00, cena 19:30, casual elegante."
       }
     },
     {

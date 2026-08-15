@@ -14,17 +14,17 @@ export default function MealsTab({ guide, meals, lang }) {
   return (
     <div>
       <section className="ink-card rounded-xl bg-ink px-5 py-5 text-canvas">
-        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-          <p className="font-display text-[46px] leading-none font-semibold tabular-nums">
-            S/ {a.perService}
-          </p>
+        <div className="flex items-start gap-4">
+          <Icon name="fork" size={30} className="mt-1 shrink-0 text-canvas/70" />
           <div>
-            <p className="font-display text-[17px] font-semibold">{t(a.headline, lang)}</p>
-            <p className="text-[12.5px] text-canvas/60">
+            <p className="font-display text-[27px] leading-tight font-semibold">{t(a.headline, lang)}</p>
+            <p className="mt-0.5 text-[12.5px] text-canvas/60">
               {t(ui.coveredBy, lang)} {t(a.payer, lang)}
             </p>
           </div>
         </div>
+
+        <p className="mt-3 text-[13.5px] text-canvas/85">{t(a.body, lang)}</p>
 
         {/* The two limits people get wrong, stated as loudly as the number
             itself — a guest who misses these is the one who gets a surprise bill. */}

@@ -144,16 +144,6 @@ export default function App() {
             }`}
           >
             {t(label, lang)}
-            {/* The amount is the reason to open this tab, so the tab says it. */}
-            {id === 'meals' && (
-              <span
-                className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[10px] font-bold tracking-[0.06em] tabular-nums ${
-                  tab === id ? 'bg-accent text-white' : 'bg-accent-soft text-accent'
-                }`}
-              >
-                {ui.covered}
-              </span>
-            )}
           </button>
         ))}
       </nav>

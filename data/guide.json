@@ -13,7 +13,7 @@
       "en": "For the guests staying at the Country Club Lima Hotel — the competition programme, how meals work, and the practical answers.",
       "es": "Para los invitados alojados en el Country Club Lima Hotel — el programa de competencia, cómo funcionan las comidas y las respuestas prácticas."
     },
-    "verified": "2026-08-11",
+    "verified": "2026-08-15",
     "verifiedLabel": {
       "en": "Last updated",
       "es": "Última actualización"
@@ -166,8 +166,8 @@
       "es": "Documento de trabajo"
     },
     "body": {
-      "en": "Times here follow the official Competition Programme as of the date above and can move — the preliminaries are still marked TBC by the organisation. The Peruvian Judo Federation is the final word on any question.",
-      "es": "Los horarios siguen el Programa de Competencia oficial a la fecha indicada y pueden cambiar — las eliminatorias siguen marcadas como por confirmar por la organización. La Federación Deportiva Peruana de Judo tiene la última palabra."
+      "en": "Times here follow the official Competition Programme as of the date above and can move. The Peruvian Judo Federation is the final word on any question.",
+      "es": "Los horarios siguen el Programa de Competencia oficial a la fecha indicada y pueden cambiar. La Federación Deportiva Peruana de Judo tiene la última palabra."
     }
   },
   "ui": {
@@ -354,8 +354,8 @@
       "es": "Su estadía"
     },
     "noEvents": {
-      "en": "No competition events — the the covered amount arrangement still applies.",
-      "es": "Sin eventos de competencia — el esquema de the covered amount sigue vigente."
+      "en": "No competition events — the meal arrangement still applies.",
+      "es": "Sin eventos de competencia — el esquema de comidas sigue vigente."
     },
     "askDesk": {
       "en": "Ask the welcome desk by the entrance",
