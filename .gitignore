@@ -2,3 +2,7 @@ node_modules/
 dist/
 .DS_Store
 *.log
+
+# Notes for whoever works on this next. Local only: the published repo
+# should carry the guide, not a description of how it is put together.
+CLAUDE.md
